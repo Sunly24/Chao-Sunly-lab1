@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha --exit",
-    "lint": "eslint . --ext .js"
+    "test": "mocha",
+    "lint": "eslint .",
+    "coverage": "nyc --reporter=text-summary --reporter=lcov npm test"
   },
   "repository": {
     "type": "git",
@@ -23,12 +24,13 @@
   "dependencies": {
     "chai": "^6.2.0",
     "express": "^5.1.0",
-    "mocha": "^11.7.4",
     "supertest": "^7.1.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",
     "eslint": "^9.39.0",
-    "globals": "^16.5.0"
+    "globals": "^16.5.0",
+    "mocha": "^11.7.4",
+    "nyc": "^17.1.0"
   }
 }
