@@ -3,5 +3,20 @@ import globals from "globals";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: {...globals.browser, ...globals.node} } },
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+    plugins: {
+      js,
+    },
+    extends: ["js/recommended"],
+    languageOptions: {
+      ecmaVersion: 2021,
+      sourceType: "module",
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.mocha,
+      },
+    },
+  },
 ]);
